@@ -15,12 +15,12 @@ permissions:
   packages: write
 
 jobs:
-#  tests:
-#    uses: ./.github/workflows/testing.yml
+  tests:
+    uses: ./.github/workflows/testing.yml
 
   goreleaser:
     name: Create release artifacts
-    # needs: [ tests ]
+    needs: [ tests ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
