@@ -57,12 +57,12 @@ dockers:
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
   - image_templates:
-      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64v8"
+      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
     use: buildx
     goarch: arm64
     dockerfile: Containerfile
     build_flag_templates:
-      - --platform=linux/arm64/v8
+      - --platform=linux/arm64
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
@@ -73,11 +73,11 @@ docker_manifests:
   - name_template: "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}"
     image_templates:
       - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64v8"
+      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
   - name_template: "ghcr.io/thewizzy/{{ .ProjectName }}:latest"
     image_templates:
       - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64v8"
+      - "ghcr.io/thewizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
 
 docker_signs:
   - cmd: cosign
