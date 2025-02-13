@@ -37,7 +37,7 @@ changelog:
 
 dockers:
   - image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
     use: buildx
     dockerfile: Containerfile
     build_flag_templates:
@@ -50,7 +50,7 @@ dockers:
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
   - image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-arm64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
     use: buildx
     goarch: arm64
     dockerfile: Containerfile
