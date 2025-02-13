@@ -15,6 +15,3 @@ linters:
     - staticcheck
     - unused
     - gosec
-
-run:
-  timeout: 3m
