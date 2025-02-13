@@ -64,22 +64,22 @@ dockers:
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
 docker_manifests:
-  - name_template: "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}"
+  - name_template: "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}"
     image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-arm64"
-  - name_template: "quay.io/leaktk/{{ .ProjectName }}:{{ .Major }}"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
+  - name_template: "quay.io/wizzy/{{ .ProjectName }}:{{ .Major }}"
     image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-arm64"
-  - name_template: "quay.io/leaktk/{{ .ProjectName }}:{{ .Major }}.{{ .Minor }}"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
+  - name_template: "quay.io/wizzy/{{ .ProjectName }}:{{ .Major }}.{{ .Minor }}"
     image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-arm64"
-  - name_template: "quay.io/leaktk/{{ .ProjectName }}:latest"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
+  - name_template: "quay.io/wizzy/{{ .ProjectName }}:latest"
     image_templates:
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-amd64"
-      - "quay.io/leaktk/{{ .ProjectName }}:{{ .Version }}-arm64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - "quay.io/wizzy/{{ .ProjectName }}:{{ .Version }}-arm64"
 
 docker_signs:
   - cmd: cosign
